@@ -5,7 +5,9 @@ module.exports = {
     "./src/**/*.{vue,js,html}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: { Labrada: ['Labrada', 'serif']}
   },
+},
   plugins: [],
 }

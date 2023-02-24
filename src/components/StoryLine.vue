@@ -16,5 +16,5 @@ export default {
 <template>
 <!--  <img class="w-screen" src="/assets/Mp4.mp4" alt="" srcset="">-->
 
-  <video class="h-[45rem] mx-auto" src="/assets/Zed.mp4" alt=""  autoplay loop muted></video>
+  <video class="h-[45rem] mx-auto" src="@/assets/Mp4_v2.mp4" alt=""  autoplay loop muted></video>
 </template>

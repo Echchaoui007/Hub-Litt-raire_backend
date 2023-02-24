@@ -3,6 +3,7 @@ import { useElementVisibility } from "@vueuse/core";
 import { ref } from "vue";
 
 export default {
+    props: { "flipped": Boolean },
     setup() {
         const el = ref(null)
         const targetIsVisible = useElementVisibility(el)
@@ -14,10 +15,10 @@ export default {
 }
 </script>
 <template>
-    
-    <div ref="el" :class="{ 'bg-white': targetIsVisible,'-translate-x-64':!targetIsVisible }"
+    <div ref="el"
+        :class="{ '-scale-x-100': flipped, 'translate-x-64': !targetIsVisible && !flipped, '-translate-x-64': !targetIsVisible && flipped }"
         class="w-full mb-32 h-96 transition-all duration-[4s]">
-        <lottie-player class="z-0 mx-auto w-fit h-[40rem] -scale-x-100" src="./assets/truck.json" background="transparent" speed="0.5" loop
-      autoplay></lottie-player>
+
+        <video class="h-[40rem] z-0 mx-auto" src="@/assets/Truck.mp4" alt="" autoplay loop muted></video>
     </div>
 </template>
