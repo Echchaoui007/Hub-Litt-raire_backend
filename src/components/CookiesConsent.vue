@@ -1,20 +1,35 @@
 <script setup>
+
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+ 
 </script>
 <template>
-    <div class="max-w-[25%] fixed bottom-2 left-2">
-            <div class="w-72 bg-white rounded-lg  shadow-xl p-6">
-                <div class="w-16 mx-auto relative -mt-10 mb-3">
-                    <img class="-mt-1" src="https://www.svgrepo.com/show/30963/cookie.svg" alt="Cookie Icon SVG">
-                </div>
-                <span class="w-full sm:w-48  block leading-normal text-gray-800 text-md mb-3">We use cookies to provide a
-                    better user experience.</span>
-                <div class="flex items-center justify-between">
-                    <button @click="$emit('rejected')" class="text-xs mr-1 text-red-500" href="#">Reject</button>
-                    <div class="w-1/2">
-                        <button type="button" @click="$emit('accepted')"
-                            class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">Accept</button>
-                    </div>
-                </div>
-            </div>
+    <div class="fixed bottom-0 left-0 p-4 bg-white border-t-4">
+        <h2 class="mb-2 text-xl font-heading">Cookie Policy</h2>
+        <p class="mb-4 leading-relaxed text-black">{{ t('cookie.content') }} </p>
+        <div class=" flex gap-5">
+            <button
+                class="rounded inline-flex items-center px-4 py-2 leading-none text-white bg-green-500 hover:bg-green-700"
+                @click="$emit('accepted')" href="#">
+                <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+                {{ t('cookie.yes') }}
+            </button>
+            <button  @click="$emit('rejected')"
+                class="rounded inline-flex items-center px-4 py-2  leading-none text-white bg-red-600 hover:bg-red-800"
+                href="#">
+                <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+                {{ t('cookie.nop') }}
+            </button>
+
+        </div>
     </div>
 </template>

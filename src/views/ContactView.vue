@@ -47,14 +47,7 @@ export default {
 
   
     
-    <!--
-    This component uses @tailwindcss/forms
-
-    yarn add @tailwindcss/forms
-    npm install @tailwindcss/forms
-
-    plugins: [require('@tailwindcss/forms')]
-  -->
+   
 
     <section class="bg-gray-100 my-8">
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -62,9 +55,9 @@ export default {
           <div class="lg:col-span-2 lg:py-12">
             
 
-            <div class="mt-8">
-              <a href="" class="text-2xl font-bold text-pink-600">
-                
+            <div class="mt-8 text-center">
+              <a  class="text-2xl font-bold text-pink-600">
+                +393297130642
               </a>
 
               <address class="mt-2 not-italic">
@@ -73,44 +66,29 @@ export default {
             </div>
           </div>
 
-          <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-            <form @submit.prevent="sendContact" class="space-y-4">
-              <div>
-                <label class="sr-only" for="name">Name</label>
-                <input class="w-full rounded-lg border-gray-200 p-3 text-sm" :placeholder="t('contact.name') " type="text" id="name" v-model="form.name" />
-              </div>
+          <div class=" text-center  rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+            <div class="mb-30">
+              <h1>
+                {{ t('contact.first') }}
+              </h1>
+              <h1>
+                {{ t('contact.second') }}
+              </h1>
+              <h1>
+                {{ t('contact.third') }}
+              </h1>
+              <h1>
+                {{ t('contact.fourth') }}
+              </h1>
 
-              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label class="sr-only" for="email">Email</label>
-                  <input class="w-full rounded-lg border-gray-200 p-3 text-sm" :placeholder="t('contact.email')" type="email"
-                    id="email" v-model="form.email" />
-                </div>
-
-                <div>
-                  <label class="sr-only" for="phone">Phone</label>
-                  <input class="w-full rounded-lg border-gray-200 p-3 text-sm" :placeholder="t('contact.phone')" type="tel"
-                    id="phone" v-model="form.phone" />
-                </div>
-              </div>
-
-              
-
-              <div>
-                <label class="sr-only " for="message">Message</label>
-
-                <textarea class="w-full rounded-lg border-gray-200 p-3 text-sm" :placeholder="t('contact.message')" rows="8"
-                  id="message" v-model="form.message"></textarea>
-              </div>
-
-              <div class="mt-4">
-                <a type="submit"
-                href=""
-                  class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
-                  {{ t('contact.send') }}
-                </a>
-              </div>
-            </form>
+            </div>
+            <div>
+              <lottie-player class=" z-0 mx-auto w-fit h-[20rem] " src="/assets/email.json" background="transparent" speed="1" loop
+            autoplay></lottie-player>
+            </div>
+            <div class="hover:-translate-y-1 hover:-translate-x-1 transition-transform duration-100 ">
+              <a class="bg-gradient-to-t from-green-400 p-4 rounded transition-shadow hover:shadow-[0.25rem_0.25rem_rgba(216,188,27,1)]  " href="mailto:contact@parmexport.it">{{ t('contact.send') }}</a>
+            </div>
           </div>
         </div>
       </div>
